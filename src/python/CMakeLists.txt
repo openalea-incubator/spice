@@ -15,5 +15,5 @@ execute_process(
 find_package(nanobind CONFIG REQUIRED)
 
 nanobind_add_module(libspice LTO ext_photonmapping_nano.cpp)
-target_link_libraries(libspice PUBLIC tinyobjloader embree OpenMP::OpenMP_CXX pm)
+target_link_libraries(libspice PUBLIC tinyobjloader tinygltf embree OpenMP::OpenMP_CXX pm)
 #endif()

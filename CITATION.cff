@@ -31,7 +31,7 @@ authors:
     family-names: Boudon
     affiliation: CIRAD
     orcid: 'https://orcid.org/0000-0001-9636-3102'
-repository-code: 'https://github.com/openalea-incubator/spice'
+repository-code: 'https://github.com/openalea/spice'
 keywords:
   - photon mapping
   - light simulation

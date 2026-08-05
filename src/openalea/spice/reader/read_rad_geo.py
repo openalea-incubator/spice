@@ -188,12 +188,12 @@ def read_rad(file: Path, scale_factor: float, invert_normals: bool):
                         if type in ("point_light", "point"):
                             i += 1
                             vert = []
-                            l = re.split(r"\s+|;+", lines[i])
+                            line = re.split(r"\s+|;+", lines[i])
                             vert.append(
                                 (
-                                    float(l[0]) / scale_factor,
-                                    float(l[1]) / scale_factor,
-                                    float(l[2]) / scale_factor,
+                                    float(line[0]) / scale_factor,
+                                    float(line[1]) / scale_factor,
+                                    float(line[2]) / scale_factor,
                                 )
                             )
                             shapes[name] = {
@@ -209,15 +209,15 @@ def read_rad(file: Path, scale_factor: float, invert_normals: bool):
                             tmp = i + 1
                             nbCoords = int(size / 3)
                             if type == "cylinder":
-                                l = re.split(r"\s+|;+", lines[i + 1])
+                                l1 = re.split(r"\s+|;+", lines[i + 1])
                                 l2 = re.split(r"\s+|;+", lines[i + 2])
                                 l3 = re.split(r"\s+|;+", lines[i + 3])
                                 r = float(l3[0]) / scale_factor
 
                                 x, y, z = (
-                                    float(l[0]) / scale_factor,
-                                    float(l[1]) / scale_factor,
-                                    float(l[2]) / scale_factor,
+                                    float(l1[0]) / scale_factor,
+                                    float(l1[1]) / scale_factor,
+                                    float(l1[2]) / scale_factor,
                                 )
                                 x2, y2, z2 = (
                                     float(l2[0]) / scale_factor,
@@ -237,16 +237,16 @@ def read_rad(file: Path, scale_factor: float, invert_normals: bool):
                                 }
                                 i += 3
                             elif type == "cone":
-                                l = re.split(r"\s+|;+", lines[i + 1])
+                                l1 = re.split(r"\s+|;+", lines[i + 1])
                                 l2 = re.split(r"\s+|;+", lines[i + 2])
                                 l3 = re.split(r"\s+|;+", lines[i + 3])
                                 r = float(l3[0]) / scale_factor
                                 r2 = float(l3[1]) / scale_factor
 
                                 x, y, z = (
-                                    float(l[0]) / scale_factor,
-                                    float(l[1]) / scale_factor,
-                                    float(l[2]) / scale_factor,
+                                    float(l1[0]) / scale_factor,
+                                    float(l1[1]) / scale_factor,
+                                    float(l1[2]) / scale_factor,
                                 )
                                 x2, y2, z2 = (
                                     float(l2[0]) / scale_factor,
@@ -288,12 +288,12 @@ def read_rad(file: Path, scale_factor: float, invert_normals: bool):
                                 i += 3
                             else:
                                 for j in range(tmp, tmp + nbCoords):
-                                    l = re.split(r"\s+|;+", lines[j])
+                                    line = re.split(r"\s+|;+", lines[j])
                                     vert.append(
                                         (
-                                            float(l[0]) / scale_factor,
-                                            float(l[1]) / scale_factor,
-                                            float(l[2]) / scale_factor,
+                                            float(line[0]) / scale_factor,
+                                            float(line[1]) / scale_factor,
+                                            float(line[2]) / scale_factor,
                                         )
                                     )
                                     i = j

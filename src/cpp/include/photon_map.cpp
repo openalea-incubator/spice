@@ -1,5 +1,5 @@
 #include "photon_map.hpp"
-#ifdef defined(_MSC_VER)
+#ifdef _MSC_VER
 namespace std
 {
     #include <execution>

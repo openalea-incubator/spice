@@ -688,7 +688,6 @@ class Simulator:
                 light_id = phmap.getIthPhoton(i).lightId
                 photons.append(((photon[0], photon[1], photon[2]), light_id))
         if mode == "oawidgets":
-            from openalea.widgets.plantgl import PlantGL
             import k3d
             from k3d.colormaps import matplotlib_color_maps
 
@@ -774,7 +773,6 @@ class Simulator:
             pgl.Viewer.display(ph_sc)
             return None
         elif mode == "oawidgets":
-            from openalea.widgets.plantgl import PlantGL
             import k3d
             from k3d.colormaps import matplotlib_color_maps
 

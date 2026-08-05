@@ -15,6 +15,7 @@ Openalea Spice documentation
    guide.rst
    code_example.rst
    notebook_examples.rst
+   references.rst
 
 
 .. include:: ../README.md

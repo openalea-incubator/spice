@@ -1,8 +1,11 @@
+import pathlib
 from openalea.plantgl.scenegraph import QuadSet, Shape
 
 from openalea.plantgl.all import Scene as pglScene
 from openalea.spice import Scene
 from openalea.spice.loader.load_environment import addEnvironment, addLightDirectionPgl
+
+filepath = pathlib.Path(__file__).parent.resolve() / 'data'
 
 def test_addEnvironment():
     sc = Scene()
@@ -18,3 +21,11 @@ def test_addEnvironment():
     addEnvironment(sc, sh, 400, {},{},{})
 
     addLightDirectionPgl(pglScene([sh]), 1)
+
+
+def test_load_GLTF():
+    sc = Scene()
+    sc.loadModelGLTF(str(filepath / 'cornellbox-water2.glb'))
+
+    assert sc.nFaces() > 0
+

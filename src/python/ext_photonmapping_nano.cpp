@@ -507,6 +507,11 @@ NB_MODULE(libspice, m)
             &Scene::loadModel,
             "Function to load a model in the scene, must be an .obj file path",
             nb::arg("filepath"))
+          .def(
+            "loadModelGLTF",
+            &Scene::loadModelGLTF,
+            "Function to load a model in the scene, must be an .gltf/.glb file path",
+            nb::arg("filepath"))
           .def("setupTriangles", &Scene::setupTriangles)
           .def("addFaceInfos",
                &Scene::addFaceInfos,

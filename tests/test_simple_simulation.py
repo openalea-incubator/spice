@@ -6,15 +6,16 @@ from openalea.spice import Vec3
 
 from openalea.spice.configuration import Configuration
 from openalea.spice.simulator import Simulator
+import shutil
 
 filepath = pathlib.Path(__file__).parent.resolve() / 'data'
 
 def test_configuration():
     simulator = Simulator(config_file=filepath / "simulation.ini")
-    assert type(simulator.configuration) == Configuration
+    assert type(simulator.configuration) is Configuration
 
     simulator.configuration.read_file(filepath / "simulation_2.ini")
-    assert type(simulator.configuration) == Configuration
+    assert type(simulator.configuration) is Configuration
     assert simulator.configuration.KEEP_ALL == 0
 
     try:
@@ -84,6 +85,8 @@ def test_simple_simulation():
                                str(filepath / "point_calibration.csv"))
 
     simulator.results.writeResults()
+    shutil.rmtree('./results')
+
 
 @pytest.mark.skip(reason="Segfault with pytest")
 def test_visualization():

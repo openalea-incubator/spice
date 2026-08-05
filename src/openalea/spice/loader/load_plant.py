@@ -1,6 +1,6 @@
 try:
     from openalea.lpy import Lsystem
-except:
+except ImportError:
     pass
 
 from openalea.spice import (
